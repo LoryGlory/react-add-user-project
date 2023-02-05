@@ -1,3 +1,4 @@
+// Modal component for error messages, displaying error title, message and an okay button; using createPortal to render modal in DOMs above root in public/index.html
 import React, {Fragment} from "react";
 import ReactDOM from 'react-dom';
 import Card from "./Card";
@@ -8,6 +9,7 @@ const Backdrop = props => {
   return <div className={classes.backdrop} onClick={props.onConfirm}/>;
 }
 
+// Modal wrapper with error content
 const ModalOverlay = props => {
   return (
       <Card className={classes.modal}>
@@ -24,6 +26,7 @@ const ModalOverlay = props => {
   );
 }
 
+// error modal element, which is rendered in backdrop-root and overlay-root in public/index.html using createPortal
 const ErrorModal = props => {
   return (
       <Fragment>
